@@ -130,7 +130,10 @@ if __name__ == '__main__':
     
     # Plotting the results obtained in the final simulation with the 
     # discovered parameters.
-    plot_single_result(df_plot)
+    plot_results_small(df_plot)
+    plot_results_small_high(df_plot_high_deg)
+    plot_results_small_low(df_plot_low_deg)
+    plot_results_high(df_plot_big)
     
     # --- PLOTTING THE RESULTS AND IMPORTANT INFORMATION ABOUT THE ANALYSIS.
     # In order to plot the information, further simulations are launched, changing the instances and 
