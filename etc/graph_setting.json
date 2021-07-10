@@ -1,0 +1,43 @@
+{
+	"big_graph":{
+		"id":"big_graph",
+		"N_nodes": 10000,
+		"prob_matrix":  [[0.005, 0.0004, 0.0004],
+	               		[0.0004, 0.0009, 0.0002],
+	               		[0.0004, 0.0002, 0.0009]],
+	    "seed": 100,
+		"pop_group_1": 0.14,
+		"pop_group_2": 0.5
+	},
+	"small_graph":{
+		"id":"small_graph",
+		"N_nodes": 3000,
+		"prob_matrix":  [[0.01, 0.001, 0.001],
+               			[0.001, 0.005, 0.0008],
+               			[0.001, 0.0008, 0.005]],
+	    "seed": 100,
+		"pop_group_1": 0.14,
+		"pop_group_2": 0.5
+	},
+	"small_graph_high_deg":{
+		"id":"small_graph_high_deg",
+		"N_nodes": 3000,
+		"prob_matrix":  [[0.02, 0.002, 0.002],
+               			[0.002, 0.01, 0.0016],
+               			[0.002, 0.0016, 0.01]],
+	    "seed": 100,
+		"pop_group_1": 0.14,
+		"pop_group_2": 0.5
+	},
+	"small_graph_low_deg":{
+		"id":"small_graph_low_deg",
+		"N_nodes": 3000,
+		"prob_matrix":  [[0.005, 0.0005, 0.0005],
+               			[0.0005, 0.0025, 0.0004],
+               			[0.0005, 0.0004, 0.0025]],
+	    "seed": 100,
+		"pop_group_1": 0.14,
+		"pop_group_2": 0.5
+	}
+	
+}
