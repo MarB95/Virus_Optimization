@@ -1,0 +1,20 @@
+13:04:27 INFO: Parameters of the simulation:
+13:04:27 INFO: n_nodes: 26
+13:04:27 INFO: edge_probability: 0.1
+13:04:27 INFO: lambda: 0.75
+13:04:27 INFO: T: 19
+13:04:27 INFO: h: 0.7
+13:04:27 INFO: SIM_LIM: 100
+13:04:27 INFO: getting mean and std of the node graph degree from instance...
+13:04:27 INFO: Graph degree average: 3.62
+13:04:27 INFO: Graph degree std: 1.96
+13:04:27 INFO: Starting the simulation...
+13:04:27 INFO: Timestamp t=0:
+13:04:27 INFO: Node 25 is set to CONTAGIOUS.
+13:04:27 INFO: Timestamp t=1:
+13:04:27 INFO: No events occurred.
+13:04:27 INFO: Timestamp t=2:
+13:04:27 INFO: Node 25's viral quantity exceeded h, it is now ILL.
+13:04:27 INFO: Timestamp t=3:
+13:04:27 INFO: Node 25 is DEAD because of the virus.
+13:04:27 INFO: Simulation has ended.

@@ -1,0 +1,12 @@
+23:51:28 INFO: Starting the simulation with h=0.45, T_max=4, lambda=0.7...
+23:51:28 INFO: Timestamp t=0:
+23:51:28 INFO: Node 1110 is set to CONTAGIOUS.
+23:51:28 INFO: Timestamp t=1:
+23:51:28 INFO: Node 1110's viral quantity exceeded h, it is now ILL.
+23:51:28 INFO: Timestamp t=2:
+23:51:28 INFO: No events occurred.
+23:51:28 INFO: Timestamp t=3:
+23:51:28 INFO: No events occurred.
+23:51:28 INFO: Timestamp t=4:
+23:51:28 INFO: Node 1110 is DEAD because of the virus.
+23:51:28 INFO: Simulation has ended.
