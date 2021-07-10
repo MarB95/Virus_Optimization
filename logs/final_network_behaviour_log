@@ -1,0 +1,16 @@
+23:48:41 INFO: Starting the simulation with h=0.47000000000000003, T_max=4, lambda=0.62...
+23:48:41 INFO: Timestamp t=0:
+23:48:41 INFO: Node 1419 is set to CONTAGIOUS.
+23:48:41 INFO: Timestamp t=1:
+23:48:41 INFO: No events occurred.
+23:48:41 INFO: Timestamp t=2:
+23:48:41 INFO: Node 1419's viral quantity exceeded h, it is now ILL.
+23:48:41 INFO: Timestamp t=3:
+23:48:41 INFO: No events occurred.
+23:48:41 INFO: Timestamp t=4:
+23:48:41 INFO: No events occurred.
+23:48:41 INFO: Timestamp t=5:
+23:48:41 INFO: No events occurred.
+23:48:41 INFO: Timestamp t=6:
+23:48:41 INFO: Node 1419 has been countagious for 4 timestamps, it is now RECOVERED.
+23:48:41 INFO: Simulation has ended.
