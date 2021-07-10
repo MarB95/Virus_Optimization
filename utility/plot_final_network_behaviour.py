@@ -8,24 +8,7 @@ from matplotlib.ticker import MaxNLocator
 # Given the time evolution of the network in the final simulation (having fixed
 # h, T and lambda), and stored in a Dataframe, a plot is generated, reporting the
 # amount of healthy, contagious, ill, dead and recovered people over time.
-def plot_results(df_plot, df_plot_high_deg, df_plot_low_deg, df_plot_big):
-    x = range(df_plot.shape[1])
-    plt.figure(figsize=(40, 19))
-    plt.plot(x, df_plot.loc["healthy"], "C2", label="Healthy", linewidth=5.0)
-    plt.plot(x, df_plot.loc["contagious"],  "C8", label="Contagious", linewidth=5.0)
-    plt.plot(x, df_plot.loc["ill"], "C3", label="Ill", linewidth=5.0)
-    plt.plot(x, df_plot.loc["dead"], "C7", label="Dead", linewidth=5.0)
-    plt.plot(x, df_plot.loc["recovered"], "C0", label="Recovered", linewidth=5.0)
-    plt.rcParams.update({"font.size": 22})
-    plt.xticks(x)
-    plt.xticks(fontsize=26)
-    plt.yticks(fontsize=26)
-    plt.title("Simulation for graph of 3000 nodes with intermediate average degree", fontsize=30)
-    plt.xlabel("Time (1 unit = 2 days)", fontsize=30)
-    plt.ylabel("Number of nodes", fontsize=30)
-    plt.legend(loc="upper right", fontsize=30)
-    plt.show()
-    
+def plot_results_small_high(df_plot_high_deg):
     x = range(df_plot_high_deg.shape[1])
     plt.figure(figsize=(22, 19))
     plt.plot(x, df_plot_high_deg.loc["healthy"], "C2", label="Healthy", linewidth=5.0)
@@ -43,6 +26,7 @@ def plot_results(df_plot, df_plot_high_deg, df_plot_low_deg, df_plot_big):
     plt.legend(loc="upper right", fontsize=30)
     plt.show()
     
+def plot_results_small_low(df_plot_low_deg):
     x = range(df_plot_low_deg.shape[1])
     plt.figure(figsize=(22, 19))
     plt.plot(x, df_plot_low_deg.loc["healthy"], "C2", label="Healthy", linewidth=5.0)
@@ -59,7 +43,8 @@ def plot_results(df_plot, df_plot_high_deg, df_plot_low_deg, df_plot_big):
     plt.ylabel("Number of nodes", fontsize=30)
     plt.legend(loc="upper right", fontsize=30)
     plt.show()
-    
+
+def plot_results_big(df_plot_big):
     x = range(df_plot_big.shape[1])
     plt.figure(figsize=(40, 19))
     plt.plot(x, df_plot_big.loc["healthy"], "C2", label="Healthy", linewidth=5.0)
@@ -72,6 +57,24 @@ def plot_results(df_plot, df_plot_high_deg, df_plot_low_deg, df_plot_big):
     plt.xticks(fontsize=26)
     plt.yticks(fontsize=26)
     plt.title("Simulation for graph of 10000 nodes", fontsize=30)
+    plt.xlabel("Time (1 unit = 2 days)", fontsize=30)
+    plt.ylabel("Number of nodes", fontsize=30)
+    plt.legend(loc="upper right", fontsize=30)
+    plt.show()
+    
+def plot_results_small(df_plot):
+    x = range(df_plot.shape[1])
+    plt.figure(figsize=(40, 19))
+    plt.plot(x, df_plot.loc["healthy"], "C2", label="Healthy", linewidth=5.0)
+    plt.plot(x, df_plot.loc["contagious"],  "C8", label="Contagious", linewidth=5.0)
+    plt.plot(x, df_plot.loc["ill"], "C3", label="Ill", linewidth=5.0)
+    plt.plot(x, df_plot.loc["dead"], "C7", label="Dead", linewidth=5.0)
+    plt.plot(x, df_plot.loc["recovered"], "C0", label="Recovered", linewidth=5.0)
+    plt.rcParams.update({"font.size": 22})
+    plt.xticks(x)
+    plt.xticks(fontsize=26)
+    plt.yticks(fontsize=26)
+    plt.title("Simulation for graph of 3000 nodes with intermediate average degree", fontsize=30)
     plt.xlabel("Time (1 unit = 2 days)", fontsize=30)
     plt.ylabel("Number of nodes", fontsize=30)
     plt.legend(loc="upper right", fontsize=30)
