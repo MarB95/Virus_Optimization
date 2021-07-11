@@ -15,7 +15,6 @@ from utility.plot_final_network_behaviour import *
 
 if __name__ == '__main__':
 
-    #1)    Search for realistic scenarios
     log_name = "./logs/main.log"
     logging.basicConfig(
         filename=log_name,
@@ -161,7 +160,7 @@ if __name__ == '__main__':
     plot_beta_p_q()
     plot_influence_of_T(df_T_mean)
     plot_influence_of_h(df_h_mean)
-    #plot_linear_behaviour(df_plot, df_plot_big)
+    
     plot_dead_histogram_per_degree_small_instance(df_final_VL,\
                                                 df_final_L,\
                                                 df_final_M,\
