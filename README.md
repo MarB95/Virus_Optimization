@@ -6,17 +6,30 @@ Project for the "Operational research: theory and applications" course, Politecn
 
 ## Project
 
-There are two main characteristics that make a virus lethal: infectivity and death rate. Let us consider a network represented by an undirected graph. Starting from a random node, the infection spreads across the network. Since the viral quantity of the virus in the human body follows an exponential trend over time as [!img](https://latex.codecogs.com/svg.latex?N_t%3DN_%7B%2B%5Cinfty%7D%281-e%5E%7B-%5Clambda+t%7D%29) $N_t=N_{+\infty}(1-e^{-\lambda t})$, it is reasonable to assume that if person *i* has been infected at time 0, the probability of infecting each neighbour is defined as: $p_i=\alpha_i(1-e^{-\lambda t})$ while the probability of his death is $ q_i=\beta_i(1-e^{-\lambda t}) $, where both $\alpha_i$ and $\beta_i$ are distributed according to Beta distributions, characterized by different parameters. We can consider the following five states for each node:
+There are two main characteristics that make a virus lethal: infectivity and death rate. Let us consider a network represented by an undirected graph. Starting from a random node, the infection spreads across the network. Since the viral quantity of the virus in the human body follows an exponential trend over time as 
+$$
+N_t=N_{+\infty}(1-e^{-\lambda t})
+$$
+ it is reasonable to assume that if person *i* has been infected at time 0, the probability of infecting each neighbour is defined as
+$$
+p_i=\alpha_i(1-e^{-\lambda t})
+$$
+while the probability of his death is
+$$
+q_i=\beta_i(1-e^{-\lambda t})
+$$
+where both &alpha;~i~ and &beta;~i~ are distributed according to Beta distributions, characterized by different parameters. We can consider the following five states for each node:
 
 - *Healthy*: the person was not infected with the virus;
 
 - *Contagious*: the person was infected with the virus and has a viral quantity different from zero, therefore she/he can infect other people;
 
-- *Ill*: as soon as the viral quantity exceeds the threshold value *h*, $1-e^{-\lambda t}\geq h$, the person becomes ill and she/he is removed from the network, in this way the quarantine period is simulated;
+- *Ill*: as soon as the viral quantity exceeds the threshold value *h*, 1-exp(-&lambda;t) &geq; h​, the person becomes ill and she/he is removed from the network, in this way the quarantine period is simulated;
 
 - *Recovered*: the ill person survived for *T* timestamps, hence she/he is considered healed;
 
 - *Dead*: the ill person could not recover within the *T* timestamps, therefore she/he is considered dead.
+
 
   
 
