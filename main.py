@@ -113,6 +113,8 @@ if __name__ == '__main__':
     #df_T_mean, df =  influenceOf_h_T(instance_small, influenceOf_T_setting, "MEDIUM", None, False)
     # Then, several h values are tested.
     #df_h_mean, df =  influenceOf_h_T(instance_small, influenceOf_h_setting, "MEDIUM", None, True)
+    #plot_influence_of_T(df_T_mean)
+    #plot_influence_of_h(df_h_mean)
     
     # Now, N simulations are launched for the 3000 nodes graphs having a larger or
     # lower average degree (with a consequent larger or lower closeness centrality).
@@ -130,15 +132,12 @@ if __name__ == '__main__':
     # --- PLOTTING THE RESULTS AND IMPORTANT INFORMATION ABOUT THE ANALYSIS.
     # In order to plot the information, further simulations are launched, changing the instances and 
     # the neighborhood size of the patient zero node. 
-    #df_final_results_big, df_plot_big = final_network_simulation(instance_big, h_real, T_max_real, lambda_optimal, "MEDIUM")   
-    #df_final_results, df_plot = final_network_simulation(instance_small, h_real, T_max_real, lambda_optimal, "MEDIUM")
-    #df_final_results_low_deg, df_plot_low_deg = final_network_simulation(instance_small_low_deg, h_real, T_max_real, lambda_optimal, "MEDIUM")   
-    #df_final_results_high_deg, df_plot_high_deg = final_network_simulation(instance_small_high_deg, h_real, T_max_real, lambda_optimal, "MEDIUM")
-    
-    # Plotting the results.
-    #plot_results_small_high(df_plot_high_deg)
-    #plot_results_small_low(df_plot_low_deg)
+    #df_final_results_big, df_plot_big = final_network_simulation(instance_big, h_real, T_max_real, lambda_optimal, "MEDIUM")
     #plot_results_high(df_plot_big)
+    #df_final_results_low_deg, df_plot_low_deg = final_network_simulation(instance_small_low_deg, h_real, T_max_real, lambda_optimal, "MEDIUM")
+    #plot_results_small_low(df_plot_low_deg)
+    #df_final_results_high_deg, df_plot_high_deg = final_network_simulation(instance_small_high_deg, h_real, T_max_real, lambda_optimal, "MEDIUM")
+    #plot_results_small_high(df_plot_high_deg)
     
     # Here, a 100 simulations are launched for each patient zero degree category for the three graphs
     # of 3000 nodes, one with lower average degree, one for the intermediate degree and one for the
@@ -151,15 +150,14 @@ if __name__ == '__main__':
     
     # Small instance high degree.
     #df_final_high_deg_VL, df_final_high_deg_L, df_final_high_deg_M, df_final_high_deg_H, df_final_high_deg_VH = retrieve_result_dataframes(instance_small, h_real, T_max_real, lambda_optimal)    
-      
-    # Retrieving the plots.
-    #plot_results(df_plot)
+    
+    # Plots for the network characteristics and Beta distributions (prob. of contagious and death):
     #graph_histogram(instance_small)
     #plot_beta_p_q()
-    #plot_influence_of_T(df_T_mean)
-    #plot_influence_of_h(df_h_mean)
     
     '''
+    # Retrieving the plots.
+    
     plot_dead_histogram_per_degree_small_instance(df_final_VL,\
                                                 df_final_L,\
                                                 df_final_M,\
