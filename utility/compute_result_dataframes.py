@@ -32,4 +32,4 @@ def retrieve_result_dataframes(instance, h_real, T_max_real, lambda_optimal):
         df_final_results_VH, df_plot = final_network_simulation(instance, h_real, T_max_real, lambda_optimal, "VERY HIGH")
         df_final_VH.loc[i] = df_final_results_VH.loc[0]
     
-    return df_final_results_VL, df_final_results_L, df_final_results_M, df_final_results_H, df_final_results_VH
+    return df_final_VL, df_final_L, df_final_M, df_final_H, df_final_VH
