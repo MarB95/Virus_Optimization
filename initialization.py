@@ -1,21 +1,26 @@
 # -*- coding: utf-8 -*-
 
 import logging
+import os
 import networkx as nx
 import json
 import pickle
 import random
 import matplotlib.pyplot as plt
 import numpy as np
-from utility.person import Person
+from person import Person
+
+# Get main script path on local machine.
+cwd = os.path.dirname(os.path.realpath(__file__))
+path = os.path.dirname(cwd)
 
 # Reading the simulation setting json file containing the graph properties.
-fp = open("./etc/graph_setting.json", 'r')
+fp = open(path+"/etc/graph_setting.json", 'r')
 graph_setting = json.load(fp)["small_graph_low_deg"]
 fp.close()
 
 # Reading the simulation setting json file containing the nodes' properties.
-fp = open("./etc/nodes_setting.json", 'r')
+fp = open(path+"/etc/nodes_setting.json", 'r')
 nodes_setting = json.load(fp)
 fp.close()
 
@@ -138,5 +143,5 @@ plt.xlabel("Node degree", fontsize=20)
 plt.ylabel("Number of nodes", fontsize=20)
 
 # Saving the variable G (the generated graph) to be used in the main.
-with open('./pickle files/small_graph_low_deg.pkl', 'wb') as f:
+with open(path+'/pickle files/small_graph_low_deg.pkl', 'wb') as f:
     pickle.dump([G, pl], f)
