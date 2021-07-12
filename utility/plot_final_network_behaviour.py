@@ -255,7 +255,7 @@ def plot_linear_behaviour(df_plot, df_plot_big):
 
 # Plotting the histogram for the dead nodes for the 3000 nodes network with
 # average degree, with std.
-def plot_dead_histogram_per_degree_small_instance(df_final_VL,\
+def plot_histogram_per_degree_small_instance(df_final_VL,\
                                                 df_final_L,\
                                                 df_final_M,\
                                                 df_final_H,\
@@ -327,7 +327,7 @@ def plot_dead_histogram_per_degree_small_instance(df_final_VL,\
 
 # Plotting the histogram for the dead nodes for the 3000 nodes network with
 # lower average degree, with std.
-def plot_dead_histogram_per_degree_small_instance_low_def(df_final_low_deg_VL,\
+def plot_histogram_per_degree_small_instance_low_def(df_final_low_deg_VL,\
                                                           df_final_low_deg_L,\
                                                           df_final_low_deg_M,\
                                                           df_final_low_deg_H,\
@@ -399,7 +399,7 @@ def plot_dead_histogram_per_degree_small_instance_low_def(df_final_low_deg_VL,\
 
 # Plotting the histogram for the dead nodes for the 3000 nodes network with
 # higher average degree, with std.
-def plot_dead_histogram_per_degree_small_instance_high_def(df_final_high_deg_VL,\
+def plot_histogram_per_degree_small_instance_high_def(df_final_high_deg_VL,\
                                                           df_final_high_deg_L,\
                                                           df_final_high_deg_M,\
                                                           df_final_high_deg_H,\
@@ -638,4 +638,4 @@ def plot_dead_histogram_per_degree(df_final_VL,df_final_low_deg_VL,df_final_high
                loc="upper right", bbox_to_anchor=(1.37, 1))
     
     plt.show()
-    
+   
