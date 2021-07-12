@@ -95,7 +95,8 @@ python3 main.py
 ```
 
 It is possible to find the real h and T and the influence of the parameters on the network behaviour by uncommenting the lines with the dedicated methods in main.py.
-To generate a new network, write in the terinal:
+
+To generate a new network, run the dedicated code in the utility folder by writing in the terinal:
 
 ```shell
 python3 initialization.py
