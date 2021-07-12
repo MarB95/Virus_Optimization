@@ -10,7 +10,7 @@ from utility.influence_of_h_T import influenceOf_h_T
 from utility.best_lambda import find_optimal_lambda
 from utility.final_network_behaviour import final_network_simulation
 from utility.compute_result_dataframes import retrieve_result_dataframes
-from utility.plot_final_network_behaviour import *
+from utility.generate_plots import *
 
 if __name__ == '__main__':
 
