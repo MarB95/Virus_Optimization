@@ -153,22 +153,11 @@ if __name__ == '__main__':
     # Retrieving the plots.
     
     plot_histogram_per_degree_small_instance(df_final_VL,\
-                                                df_final_L,\
-                                                df_final_M,\
-                                                df_final_H,\
-                                                df_final_VH)
-        
-    plot_histogram_per_degree_small_instance_low_def(df_final_low_deg_VL,\
-                                                          df_final_low_deg_L,\
-                                                          df_final_low_deg_M,\
-                                                          df_final_low_deg_H,\
-                                                          df_final_low_deg_VH)
-        
-    plot_histogram_per_degree_small_instance_high_def(df_final_high_deg_VL,\
-                                                          df_final_high_deg_L,\
-                                                          df_final_high_deg_M,\
-                                                          df_final_high_deg_H,\
-                                                          df_final_high_deg_VH)
+                                            df_final_L,\
+                                            df_final_M,\
+                                            df_final_H,\
+                                            df_final_VH,\
+                                            'Ill and dead nodes per patient zero degree')
         
     plot_infected_histogram_per_degree(df_final_VL,df_final_low_deg_VL,df_final_high_deg_VL,\
                                         df_final_L,df_final_low_deg_L,df_final_high_deg_L,\
