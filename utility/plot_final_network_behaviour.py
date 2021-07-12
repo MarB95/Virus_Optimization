@@ -259,7 +259,8 @@ def plot_histogram_per_degree_small_instance(df_final_VL,\
                                                 df_final_L,\
                                                 df_final_M,\
                                                 df_final_H,\
-                                                df_final_VH):
+                                                df_final_VH,\
+                                                title):
     fig = plt.figure(figsize=(22, 19))
     ax = fig.add_subplot(111)
     
@@ -312,151 +313,7 @@ def plot_histogram_per_degree_small_instance(df_final_VL,\
     #ax.set_xlim(-width,len(ind)+width)
     #.set_ylim(0,45)
     ax.set_ylabel('Number of nodes', fontsize=35)
-    ax.set_title('Ill and dead nodes per patient zero degree', fontsize=35)
-    xTickMarks = ['VERY LOW', 'LOW', 'MEDIUM', 'HIGH', 'VERY HIGH']
-    ax.set_xticks(ind+0.1)
-    xtickNames = ax.set_xticklabels(xTickMarks)
-    plt.setp(xtickNames, rotation=0, fontsize=30)
-    plt.yticks(fontsize=26)
-    
-    ax.legend( (rects1[0], rects2[0]), \
-              ('Ill nodes', 'Dead nodes',), fontsize=30,\
-               loc="upper right", bbox_to_anchor=(1.27, 1))
-    
-    plt.show()
-
-# Plotting the histogram for the dead nodes for the 3000 nodes network with
-# lower average degree, with std.
-def plot_histogram_per_degree_small_instance_low_def(df_final_low_deg_VL,\
-                                                          df_final_low_deg_L,\
-                                                          df_final_low_deg_M,\
-                                                          df_final_low_deg_H,\
-                                                          df_final_low_deg_VH):
-    fig = plt.figure(figsize=(22, 19))
-    ax = fig.add_subplot(111)
-    
-    ## the data
-    N = 5
-        
-    medium_deg_con = [int(df_final_low_deg_VL.total_ill.mean()),\
-                  int(df_final_low_deg_L.total_ill.mean()),\
-                  int(df_final_low_deg_M.total_ill.mean()),\
-                  int(df_final_low_deg_H.total_ill.mean()),\
-                  int(df_final_low_deg_VH.total_ill.mean())]
-        
-    
-    medium_deg_con_std = [float(df_final_low_deg_VL.total_ill.std()),\
-               float(df_final_low_deg_L.total_ill.std()),\
-               float(df_final_low_deg_M.total_ill.std()),\
-               float(df_final_low_deg_H.total_ill.std()),\
-               float(df_final_low_deg_VH.total_ill.std())]
-        
-    medium_deg_dead = [int(df_final_low_deg_VL.total_dead.mean()),\
-                  int(df_final_low_deg_L.total_dead.mean()),\
-                  int(df_final_low_deg_M.total_dead.mean()),\
-                  int(df_final_low_deg_H.total_dead.mean()),\
-                  int(df_final_low_deg_VH.total_dead.mean())]
-        
-    
-    medium_deg_dead_std = [float(df_final_low_deg_VL.total_dead.std()),\
-               float(df_final_low_deg_L.total_dead.std()),\
-               float(df_final_low_deg_M.total_dead.std()),\
-               float(df_final_low_deg_H.total_dead.std()),\
-               float(df_final_low_deg_VH.total_dead.std())]
-    
-    ## necessary variables
-    ind = np.arange(N) # the x locations for the groups
-    width = 0.30 # the width of the bars
-    
-    ## the bars
-    
-    rects1 = ax.bar(ind, medium_deg_con, width,
-                        color='#2796e3',
-                        yerr=medium_deg_con_std,
-                        error_kw=dict(elinewidth=2,ecolor='#000000'))
-    rects2 = ax.bar(ind+width, medium_deg_dead, width,
-                        color='#d43bff',
-                        yerr=medium_deg_dead_std,
-                        error_kw=dict(elinewidth=2,ecolor='#000000'))
-    
-    
-    # axes and labels
-    #ax.set_xlim(-width,len(ind)+width)
-    #.set_ylim(0,45)
-    ax.set_ylabel('Number of nodes', fontsize=35)
-    ax.set_title('Ill and dead nodes per patient zero degree', fontsize=35)
-    xTickMarks = ['VERY LOW', 'LOW', 'MEDIUM', 'HIGH', 'VERY HIGH']
-    ax.set_xticks(ind+0.1)
-    xtickNames = ax.set_xticklabels(xTickMarks)
-    plt.setp(xtickNames, rotation=0, fontsize=30)
-    plt.yticks(fontsize=26)
-    
-    ax.legend( (rects1[0], rects2[0]), \
-              ('Ill nodes', 'Dead nodes',), fontsize=30,\
-               loc="upper right", bbox_to_anchor=(1.27, 1))
-    
-    plt.show()
-
-# Plotting the histogram for the dead nodes for the 3000 nodes network with
-# higher average degree, with std.
-def plot_histogram_per_degree_small_instance_high_def(df_final_high_deg_VL,\
-                                                          df_final_high_deg_L,\
-                                                          df_final_high_deg_M,\
-                                                          df_final_high_deg_H,\
-                                                          df_final_high_deg_VH):
-    fig = plt.figure(figsize=(22, 19))
-    ax = fig.add_subplot(111)
-    
-    ## the data
-    N = 5
-        
-    medium_deg_con = [int(df_final_high_deg_VL.total_ill.mean()),\
-                  int(df_final_high_deg_L.total_ill.mean()),\
-                  int(df_final_high_deg_M.total_ill.mean()),\
-                  int(df_final_high_deg_H.total_ill.mean()),\
-                  int(df_final_high_deg_VH.total_ill.mean())]
-        
-    
-    medium_deg_con_std = [float(df_final_high_deg_VL.total_ill.std()),\
-               float(df_final_high_deg_L.total_ill.std()),\
-               float(df_final_high_deg_M.total_ill.std()),\
-               float(df_final_high_deg_H.total_ill.std()),\
-               float(df_final_high_deg_VH.total_ill.std())]
-        
-    medium_deg_dead = [int(df_final_high_deg_VL.total_dead.mean()),\
-                  int(df_final_high_deg_L.total_dead.mean()),\
-                  int(df_final_high_deg_M.total_dead.mean()),\
-                  int(df_final_high_deg_H.total_dead.mean()),\
-                  int(df_final_high_deg_VH.total_dead.mean())]
-        
-    
-    medium_deg_dead_std = [float(df_final_high_deg_VL.total_dead.std()),\
-               float(df_final_high_deg_L.total_dead.std()),\
-               float(df_final_high_deg_M.total_dead.std()),\
-               float(df_final_high_deg_H.total_dead.std()),\
-               float(df_final_high_deg_VH.total_dead.std())]
-    
-    ## necessary variables
-    ind = np.arange(N) # the x locations for the groups
-    width = 0.30 # the width of the bars
-    
-    ## the bars
-    
-    rects1 = ax.bar(ind, medium_deg_con, width,
-                        color='#2796e3',
-                        yerr=medium_deg_con_std,
-                        error_kw=dict(elinewidth=2,ecolor='#000000'))
-    rects2 = ax.bar(ind+width, medium_deg_dead, width,
-                        color='#d43bff',
-                        yerr=medium_deg_dead_std,
-                        error_kw=dict(elinewidth=2,ecolor='#000000'))
-    
-    
-    # axes and labels
-    #ax.set_xlim(-width,len(ind)+width)
-    #.set_ylim(0,45)
-    ax.set_ylabel('Number of nodes', fontsize=35)
-    ax.set_title('Ill and dead nodes per patient zero degree', fontsize=35)
+    ax.set_title(title, fontsize=35)
     xTickMarks = ['VERY LOW', 'LOW', 'MEDIUM', 'HIGH', 'VERY HIGH']
     ax.set_xticks(ind+0.1)
     xtickNames = ax.set_xticklabels(xTickMarks)
@@ -638,4 +495,4 @@ def plot_dead_histogram_per_degree(df_final_VL,df_final_low_deg_VL,df_final_high
                loc="upper right", bbox_to_anchor=(1.37, 1))
     
     plt.show()
-   
+    
