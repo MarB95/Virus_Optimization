@@ -87,7 +87,7 @@ if __name__ == '__main__':
     f.close() 
     # ------------------------------------------------------------------------
     
-    # --- STEP 1: FINDING THE REAL h AND T THAT BEST FIT THE PRE-DEFINED TARGETS OF THE VIRUS.
+    # --- REAL PARAMETERS DISCOVERY.
     # The real scenario parameters are investigated, having defined
     # the virus to have an infection rate of 40% and death rate of 7%.
     # The node degree of the patient zero is set to be medium.
@@ -97,7 +97,7 @@ if __name__ == '__main__':
     T_max_real = 4
     # ------------------------------------------------------------------------
     
-    # --- STEP 2: HAVING DISCOVERED h AND T, THE LAMBDA THAT PROVIDES THE MOST DEATHS IS FOUND.
+    # --- LAMBDA OPTIMIZATION.
     # Finding the optimal lambda in the real scenario, the lambda that 
     # provides the highest number of deaths.
     lambda_optimal = find_optimal_lambda(instance_small, best_lambda_setting, h_real, T_max_real, "MEDIUM")
@@ -105,8 +105,7 @@ if __name__ == '__main__':
     #lambda_optimal = 0.59
     # ------------------------------------------------------------------------
     
-    # --- STEP 3: FURTHER ANALYSIS ARE PERFORMED, TRYING TO OBTAIN MORE INFORMATION ON THE VIRUS
-    # --- BEHAVIOUR.
+    # --- STUDY ON THE INFLUENCE OF THE PARAMETERS AND NETWORK CHARACTERSITCS.
     # Having discovered the lambda optimal, different values of T and h are
     # tested. The average simulations results, for each tested values, are 
     # returned in a DataFrame.
