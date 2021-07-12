@@ -45,4 +45,4 @@ def influence_avg_deg(instance, h, T, lambd, n_simulations, deg, patient_zero_de
     averages=tmp_df.mean(axis=0)
     averages_clean=tmp_df[tmp_df["total_dead"]>1].mean(axis=0)
     
-    return tmp_df, averages, averages_clean
+    return tmp_df, averages
