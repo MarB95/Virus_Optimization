@@ -7,7 +7,6 @@ import pickle
 from simulator.instance import Instance
 from utility.find_real_h_T import find_real_scenario_parameters
 from utility.influence_of_h_T import influenceOf_h_T
-from utility.influence_of_degree import influence_avg_deg
 from utility.best_lambda import find_optimal_lambda
 from utility.final_network_behaviour import final_network_simulation
 from utility.compute_result_dataframes import retrieve_result_dataframes
@@ -115,11 +114,6 @@ if __name__ == '__main__':
     #df_h_mean, df =  influenceOf_h_T(instance_small, influenceOf_h_setting, "MEDIUM", None, True)
     #plot_influence_of_T(df_T_mean)
     #plot_influence_of_h(df_h_mean)
-    
-    # Now, N simulations are launched for the 3000 nodes graphs having a larger or
-    # lower average degree (with a consequent larger or lower closeness centrality).
-    #df_low_deg, average_low_deg, av_low_noOutliers = influence_avg_deg(instance_small_low_deg, h_real, T_max_real, lambda_optimal, 100,"low","MEDIUM")
-    #df_high_deg, average_high_deg, av_high_noOutliers = influence_avg_deg(instance_small_high_deg, h_real, T_max_real, lambda_optimal, 100,"high", "MEDIUM")
     
     # Having fixed the optimal lambda, h real and T real, now the virus
     # behaviour is studied within the network, launching a final simulation.
