@@ -88,9 +88,11 @@ pip3 install pandas
 
 
 ## Run the code:
-Run the code by writing in the terminal
+To find the optimal lambda, with the already found real T and h, run the code by writing in the terminal:
 
 ```shell
 python3 main.py
 ```
+
+It is possible to find the real h and T and the influence of the parameters on the network behaviour by uncommenting the lines with the dedicated methods in main.py.
 
