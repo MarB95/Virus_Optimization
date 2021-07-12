@@ -146,10 +146,10 @@ if __name__ == '__main__':
     #df_final_VL, df_final_L, df_final_M, df_final_H, df_final_VH = retrieve_result_dataframes(instance_small, h_real, T_max_real, lambda_optimal)
 
     # Small instance low degree.
-    #df_final_low_deg_VL, df_final_low_deg_L, df_final_low_deg_M, df_final_low_deg_H, df_final_low_deg_VH = retrieve_result_dataframes(instance_small, h_real, T_max_real, lambda_optimal)    
+    #df_final_low_deg_VL, df_final_low_deg_L, df_final_low_deg_M, df_final_low_deg_H, df_final_low_deg_VH = retrieve_result_dataframes(instance_small_low_deg, h_real, T_max_real, lambda_optimal)    
     
     # Small instance high degree.
-    #df_final_high_deg_VL, df_final_high_deg_L, df_final_high_deg_M, df_final_high_deg_H, df_final_high_deg_VH = retrieve_result_dataframes(instance_small, h_real, T_max_real, lambda_optimal)    
+    #df_final_high_deg_VL, df_final_high_deg_L, df_final_high_deg_M, df_final_high_deg_H, df_final_high_deg_VH = retrieve_result_dataframes(instance_small_high_deg, h_real, T_max_real, lambda_optimal)    
     
     # Plots for the network characteristics and Beta distributions (prob. of contagious and death):
     #graph_histogram(instance_small)
