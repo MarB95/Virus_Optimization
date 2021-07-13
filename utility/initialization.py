@@ -143,5 +143,5 @@ plt.xlabel("Node degree", fontsize=20)
 plt.ylabel("Number of nodes", fontsize=20)
 
 # Saving the variable G (the generated graph) to be used in the main.
-with open(path+'/pickle files/small_graph_low_deg.pkl', 'wb') as f:
+with open(path+'/pickle files/'+graph_setting["id"]+'.pkl', 'wb') as f:
     pickle.dump([G, pl], f)
