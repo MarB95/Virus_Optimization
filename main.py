@@ -90,6 +90,7 @@ if __name__ == '__main__':
     # The real scenario parameters are investigated, having defined
     # the virus to have an infection rate of 40% and death rate of 7%.
     # The node degree of the patient zero is set to be medium.
+    #print("Finding real h and T_max...")
     #df_real_h_T, h_real, T_max_real = find_real_scenario_parameters(instance_small, real_h_T_setting, "MEDIUM")
     # These are the real paramenters that have been found:
     h_real = 0.45
@@ -99,6 +100,7 @@ if __name__ == '__main__':
     # --- LAMBDA OPTIMIZATION.
     # Finding the optimal lambda in the real scenario, the lambda that 
     # provides the highest number of deaths.
+    print("Finding optimal lambda...")
     lambda_optimal = find_optimal_lambda(instance_small, best_lambda_setting, h_real, T_max_real, "MEDIUM")
     # This is the optimal lambda that has been found:
     #lambda_optimal = 0.59
@@ -109,10 +111,12 @@ if __name__ == '__main__':
     # tested. The average simulations results, for each tested values, are 
     # returned in a DataFrame.
     # First, several T values are tested.
+    #print("Analysing influence of T_max...")
     #df_T_mean, df =  influenceOf_h_T(instance_small, influenceOf_T_setting, "MEDIUM", None, False)
-    # Then, several h values are tested.
-    #df_h_mean, df =  influenceOf_h_T(instance_small, influenceOf_h_setting, "MEDIUM", None, True)
     #plot_influence_of_T(df_T_mean)
+    # Then, several h values are tested.
+    #print("Analysing influence of h...")
+    #df_h_mean, df =  influenceOf_h_T(instance_small, influenceOf_h_setting, "MEDIUM", None, True)
     #plot_influence_of_h(df_h_mean)
     
     # Having fixed the optimal lambda, h real and T real, now the virus
