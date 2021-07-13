@@ -147,6 +147,8 @@ if __name__ == '__main__':
     
     # Plots for the network characteristics and Beta distributions (prob. of contagious and death):
     #graph_histogram(instance_small)
+    #graph_histogram(instance_big)
+    #plot_nodes_histogram_per_degree(instance_small)
     #plot_beta_p_q()
     
     '''
