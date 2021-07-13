@@ -32,19 +32,21 @@ def influenceOf_h_T(instance, influenceOf_h_T_setting, patient_zero_degree=None 
     # in the settings. For each triplet (h, T, lambda) a simulation is launched.
     for lambd in influenceOf_h_T_setting['lambda_range']:
         for h in influenceOf_h_T_setting['h_range']:
-            for T in influenceOf_h_T_setting["T_range"]:
-                pl = instance.pl
-                results = simulation(log_file, influenceOf_h_T_setting, lambd, h, T, pl, instance.SIM_LIM, patient_zero_degree, first_node, False, False)
-                tmp_results = {"h":results["h"], "T_max":results["T_max"], "total_healthy":results["total_healthy"], "total_contagious":results["total_contagious"], "total_dead":results["total_dead"] }
-                # Appending the intermediate results in a local DF.
-                tmp_df = tmp_df.append(tmp_results, ignore_index=True)
-                # Save the intermediate results of each simulation in the csv file.
-                try:
-                    with open(csv_file, 'a') as csvfile:
-                        writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
-                        writer.writerow(tmp_results)
-                except IOError:
-                    print("I/O error")
+            for n in range(influenceOf_h_T_setting['N_h']):
+                for T in influenceOf_h_T_setting["T_range"]:
+                    for t in range(influenceOf_h_T_setting['N_T']):
+                        pl = instance.pl
+                        results = simulation(log_file, influenceOf_h_T_setting, lambd, h, T, pl, instance.SIM_LIM, patient_zero_degree, first_node, False, False)
+                        tmp_results = {"h":results["h"], "T_max":results["T_max"], "total_healthy":results["total_healthy"], "total_contagious":results["total_contagious"], "total_dead":results["total_dead"] }
+                        # Appending the intermediate results in a local DF.
+                        tmp_df = tmp_df.append(tmp_results, ignore_index=True)
+                        # Save the intermediate results of each simulation in the csv file.
+                        try:
+                            with open(csv_file, 'a') as csvfile:
+                                writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
+                                writer.writerow(tmp_results)
+                        except IOError:
+                            print("I/O error")
     ###
     if not change_h:
         df_mean_T = pd.DataFrame(columns = csv_columns)
