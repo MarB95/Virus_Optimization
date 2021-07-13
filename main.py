@@ -119,6 +119,9 @@ if __name__ == '__main__':
     # behaviour is studied within the network, launching a final simulation.
     df_final_results, df_plot = final_network_simulation(instance_small, h_real, T_max_real, lambda_optimal, "MEDIUM")   
     
+    # WARNING: due to the random nature of the simulation, patient zero may get ill and be removed from the network before 
+    # infecting its neighbors. Therefore, in case of misleading results (2999 healthy nodes), run again the simulation.
+    
     # Plotting the results obtained in the final simulation with the 
     # discovered parameters.
     plot_results_small(df_plot)
