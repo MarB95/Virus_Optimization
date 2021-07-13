@@ -58,9 +58,9 @@ for t in DURATION do
 				initialize neighbor.p;
 				initialize neighbor.viral_quantity;
 
-			else if node.state is equal to ILL then
-				update node.q;
-				increment node.ill_counter by 1;
+		else if node.state is equal to ILL then
+			update node.q;
+			increment node.ill_counter by 1;
 
 		    if random number less or equal to node.p then
 			update node.state to DEAD;
@@ -83,6 +83,7 @@ pip3 install logging
 pip3 install networkx
 pip3 install pickle
 pip3 install pandas
+pip3 install scipy
 ```
 
 
