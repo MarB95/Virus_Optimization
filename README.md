@@ -32,41 +32,41 @@ initialize nodes //list of nodes belonging to the network;
  
 for t in DURATION do
 	if t is equal to 0 then
-        select randomly patient zero;
-        set state of patient zero to CONTAGIOUS;
-        initialize patient_zero.p;
-        initialize patient_zero.viral_quantity;
+		select randomly patient zero;
+		set state of patient zero to CONTAGIOUS;
+		initialize patient_zero.p;
+		initialize patient_zero.viral_quantity;
 
 	for node in nodes do
 
-        if node.state is either HEALTHY, DEAD or RECOVERED then
-        	continue;
+		if node.state is either HEALTHY, DEAD or RECOVERED then
+			continue;
 
-        else if node.state is CONTAGIOUS then
-        	update node.p;
-        	update node.viral_quantity;
+		else if node.state is CONTAGIOUS then
+			update node.p;
+			update node.viral_quantity;
 
-            if node.viral_quantity is greater or equal to h then
-                update node.state to ILL;
-                initialize node.q;
-                increment node.ill_counter by 1;
-
-            else
-                for neighbor in node's neighborhood do
-                    if neighbor is HEALTHY and random number less or equal to node.p then
-                        set neighbor state to CONTAGIOUS;
-                        initialize neighbor.p;
-                        initialize neighbor.viral_quantity;
-
-		else if node.state is equal to ILL then
-			update node.q;
+		    if node.viral_quantity is greater or equal to h then
+			update node.state to ILL;
+			initialize node.q;
 			increment node.ill_counter by 1;
 
-            if random number less or equal to node.p then
-            	update node.state to DEAD;
+		    else
+			for neighbor in node's neighborhood do
+			    if neighbor is HEALTHY and random number less or equal to node.p then
+				set neighbor state to CONTAGIOUS;
+				initialize neighbor.p;
+				initialize neighbor.viral_quantity;
 
-            else if node.ill_counter is greater than T then
-            	set node.state to RECOVERED;
+			else if node.state is equal to ILL then
+				update node.q;
+				increment node.ill_counter by 1;
+
+		    if random number less or equal to node.p then
+			update node.state to DEAD;
+
+		    else if node.ill_counter is greater than T then
+			set node.state to RECOVERED;
 
 	if all nodes are either HEALTHY, DEAD or RECOVERED then
 		break;
